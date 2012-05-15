@@ -263,7 +263,13 @@ Ext.define("Ext.ux.form.field.TinyMCE",	{
 
 	getValue: function()
 	{
-		return this.editor.getContent();
+		if(this.editor) {
+			return this.editor.getContent();
+		}
+		else {
+			return this.value;
+		}
+		
 	},
 	
 	setValue: function(value)
