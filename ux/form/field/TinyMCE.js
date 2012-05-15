@@ -263,13 +263,7 @@ Ext.define("Ext.ux.form.field.TinyMCE",	{
 
 	getValue: function()
 	{
-		if(this.editor) {
-			return this.editor.getContent();
-		}
-		else {
-			return this.value;
-		}
-		
+		return this.editor.getContent();
 	},
 	
 	setValue: function(value)
@@ -310,10 +304,10 @@ Ext.define("Ext.ux.form.field.TinyMCE",	{
 	{
 		var me = this;
 		
-		//me.editor.remove();
-		if(me.editor){
-			me.editor.destroy();
-		}
+		if(me.editor)
+		{
+            me.editor.destroy();
+        }
 		me.callParent(arguments);
 	},
 	
